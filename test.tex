@@ -1,0 +1,103 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, graphicx}
+\usepackage[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]{hyperref}
+
+% 导言区
+
+\title{我的第一个\LaTeX 文档}
+\author{崔俊杰}
+\date{\today}
+\newtheorem{theorem}{勾股定理}[section]
+
+
+% 正文区
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{学习一}
+
+\subsection{二级标题}
+
+这里是正文. 
+
+\subsection{二级标题}
+
+这里是正文. 
+
+\subsection{原神美图展示}
+见下图
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=8cm]{影.jpg}
+    \caption{雷电将军}
+\end{figure}
+
+\section{学习二}
+
+\subsection{表格学习}
+
+\begin{table}[htbp]
+    \centering
+    \caption{测试}
+    \begin{tabular}{ccc}
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+        7 & 8 & 9 \\
+    \end{tabular}
+\end{table}
+
+\begin{tabular}{|l|l|}
+    \hline
+    迪卢克 & 火 \\
+    \hline
+    夜兰 & 水 \\ 
+    \hline
+    艾尔海森 & 草 \\ 
+    \hline
+\end{tabular}
+
+\subsection{列表学习}
+\begin{enumerate}
+    \item 一阵微风塑起记忆
+    \item 吹过森林
+    \item 萤火的痕迹
+\end{enumerate}
+
+\subsection{列表自定义样式}
+\begin{enumerate}
+    \item[(1)] 一阵微风塑起记忆
+    \item[(2)] 吹过森林
+    \item[(3)] 萤火的痕迹
+\end{enumerate}
+
+\section{学习三}
+
+\subsection{定理展示}
+\begin{theorem}[勾股定理]
+\end{theorem}
+
+\subsection{字体大小}
+normal size words
+
+{\tiny tiny words}
+
+{\scriptsize scriptsize words}
+
+{\footnotesize footnotesize words}
+
+{\small small words}
+
+{\large large words}
+
+{\Large Large words} 
+
+{\LARGE LARGE words}
+
+{\huge huge words}
+
+\end{document}

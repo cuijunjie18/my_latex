@@ -1,0 +1,15 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usetikzlibrary{patterns,arrows,positioning,calc,fadings,shapes,decorations.markings}
+\usepackage{tikz}
+\begin{document}
+    \begin{tikzpicture}
+        \node at (0,0) {\TeX}; % 默认显示
+        \node[draw] at (2,0) {\TeX}; % 加边框
+        \node[draw,text width=3em,align=center] at (4,0) {\TeX}; % 规定固定宽度并居中显示文字，如果同时规定了宽度和高度，但是内容过多还是会将所有文字都包住，此时会牺牲高度的定义。
+        \node[draw=red,shape=circle,dashed] at (6,0) {\TeX}; % 定义形状为圆形并改为默认虚线类型。
+        \node[draw=red,shape=circle,dashed,dash pattern=on 4pt off 2pt on 6pt off 2pt] at (8,0) {\TeX}; % 修改虚线的类型为点画线。
+        \node[draw=blue,shape=ellipse] at (8,-4) {00011};
+    \end{tikzpicture}
+\end{document}

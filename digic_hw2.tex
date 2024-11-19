@@ -1,0 +1,75 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\usepackage{amsmath, amsthm, amssymb, graphicx}
+\usepackage{float}
+\usepackage{diagbox}
+\usepackage[bookmarks=true, colorlinks, citecolor=blue, linkcolor=black]{hyperref}
+
+% tikz画图包
+\usepackage{pgfplots}
+\usetikzlibrary{patterns,arrows,positioning,calc,fadings,shapes,decorations.markings}
+\usepackage{tikz}
+
+% 导言区
+\title{作业二第6题}
+\author{崔俊杰}
+
+\begin{document}
+\maketitle
+\raggedright(1)电路的输出方程：\(Y = Q_2\) \\
+\quad \\
+\raggedright(2)电路的驱动方程：
+$
+\begin{cases}
+
+    D_0 = Q_2^{'}Q_1^{'}Q_0^{'} \\
+    D_1 = Q_0 \\
+    D_2 = Q_1 
+
+\end{cases}
+$\\ 
+\quad \\
+\raggedright(3)电路的状态方程：\\
+由D触发器的特性方程\(Q = D\)有\\
+\begin{align}
+    Q_0 &= D_0 = Q_2^{'}Q_1^{'}Q_0^{'} \nonumber \\
+    Q_1 &= D_1 = Q_0 \nonumber \\
+    Q_2 &= D_2 = Q_1 \nonumber
+\end{align}
+\raggedright 故电路的状态方程为：
+$
+\begin{cases}
+    Q_0 =Q_2^{'}Q_1^{'}Q_0^{'} \\ 
+    Q_1 = Q_0 \\ 
+    Q_2 = Q_1 \\
+\end{cases}
+$\\
+\; \\
+\; \\
+\raggedright(4)电路的状态图如图所示： \\
+\begin{tikzpicture}
+    % \node (Y) at (10,0) {/$Y$};
+    \node [draw,shape=ellipse](n0) at (2,-2) {000};
+    \node [draw,shape=ellipse](n1) at (5,-2) {001};
+    \node [draw,shape=ellipse](n2)at (8,-2) {010};
+    \node [draw,shape=ellipse](n3)at (10,-4) {011};
+    \node [draw,shape=ellipse](n4)at (10,0) {100};
+    \node [draw,shape=ellipse](n5)at (6,-4) {101};
+    \node [draw,shape=ellipse](n6)at (12,-2) {110};
+    \node [draw,shape=ellipse](n7)at (14,-4) {111};
+    \node [draw,shape=ellipse](n)at (10,2) {$Q_2Q_1Q_0$};
+
+    \draw[->] (n0) -- (n1); 
+    \draw[->] (n1) -- (n2); 
+    \draw[->] (n2) -- (n4); 
+    \draw[->] (n6) -- (n4); 
+    \draw[->] (n3) -- (n6); 
+    \draw[->] (n7) -- (n6); 
+    \draw[->] (n5) -- (n2); 
+    \draw[->] (n4) to [out = 120,in = 90] (n0);
+\end{tikzpicture}
+\\
+\;\\
+\textbf{由图可知，该电路可以自启动.} \\\;\\
+\raggedright(5)分析电路的逻辑功能：\\
+\textbf{由状态图可知，该电路实现的是一个0->1->2->4->0的循环计数器.}
+\end{document}
